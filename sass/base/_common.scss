@@ -26,25 +26,53 @@ p {
 }
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .container {
-  width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
+  @media screen and (max-width: 767px) {
+    & {
+      max-width: 480px;
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    & {
+      width: 768px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    & {
+      width: 1200px;
+    }
+  }
 }
 .section {
-  padding: 94px 0;
+  padding: 60px 0;
+  @media screen and (min-width: 1200px) {
+    & {
+      padding: 94px 0;
+    }
+  }
 }
 .section ul {
-  display: flex;
+  @media screen and (min-width: 768px) {
+    & {
+      display: flex;
+    }
+  }
 }
 .section-heading {
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
   margin-top: 0;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 50px;
+  }
 }
 .icon {
   fill: currentColor;

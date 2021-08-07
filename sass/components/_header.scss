@@ -1,6 +1,13 @@
 .header {
   line-height: 1.14;
   border-bottom: 1px solid #ececec;
+  position: relative;
+  height: 60px;
+  @media screen and (min-width: 768px) {
+    & {
+      height: 80px;
+    }
+  }
 }
 .header__container {
   display: flex;
@@ -9,20 +16,45 @@
 .navigation {
   display: flex;
   align-items: center;
+  margin-right: 84px;
 }
-.navigation__list,
-.contacts {
+.menu-container {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
+.navigation__list {
   display: flex;
   align-items: center;
+  @media screen and (min-width: 1200px) {
+    margin-right: auto;
+  }
 }
 .contacts {
-  margin-left: auto;
+  margin: auto 0;
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    justify-content: center;
+    // margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .contacts__item + .contacts__item {
+    margin-top: 10px;
+  }
 }
 .contacts__link {
   color: $secondary-color;
-  padding: 10px 0;
+
   display: flex;
   align-items: center;
+  @media screen and (min-width: 1200px) {
+    padding: 10px 0;
+  }
 }
 .contacts__icon {
   margin-right: 10px;
@@ -41,16 +73,39 @@
     color: $accent-color;
   }
 }
-
-.navigation__item + .navigation__item,
-.contacts__item + .contacts__item {
+@media screen and (min-width: 1200px) {
+  .contacts__item + .contacts__item {
+    margin-left: 30px;
+  }
+}
+.navigation__item + .navigation__item
+// ,.contacts__item + .contacts__item
+{
   margin-left: 50px;
 }
 .logo {
   font-family: $logo-font;
-  font-size: 26px;
+  font-size: 24px;
+
   margin-right: 93px;
-  padding: 10px 0;
+  margin-right: 88px;
+  @media screen and (max-width: 767px) {
+    & {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    & {
+      padding: 10px 0;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    & {
+      margin-right: 93px;
+      font-size: 26px;
+    }
+  }
 }
 .logo--accent {
   color: $accent-color;
