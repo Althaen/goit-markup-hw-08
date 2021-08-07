@@ -16,9 +16,11 @@
   }
 }
 .features__item {
-  text-align: center;
-
-  // width: 270px;
+  @media screen and (max-width: 767px) {
+    & {
+      text-align: center;
+    }
+  }
   @media screen and (min-width: 768px) {
     & {
       margin: 15px;
