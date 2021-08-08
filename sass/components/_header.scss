@@ -114,7 +114,7 @@
   padding: 32px 0;
 }
 
-.active {
+.navigation__item.active {
   color: $accent-color;
   &::after {
     content: "";
