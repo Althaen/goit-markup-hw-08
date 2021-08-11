@@ -540,7 +540,6 @@ img {
 
 .checkbox:checked + .checkbox-icon {
   background-image: url("../images/icon-check.svg");
-  background-size: contain;
   background-origin: border-box;
   border-color: transparent;
 }
@@ -1148,12 +1147,9 @@ button[type="submit"] {
   border-radius: 4px;
 }
 
-.projects {
-  margin: -15px;
-}
-
 @media screen and (min-width: 768px) {
   .projects {
+    margin: -15px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1162,9 +1158,15 @@ button[type="submit"] {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .projects__card:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
 .projects__card {
   width: 450px;
-  margin: 15px auto;
+  height: 404px;
   -webkit-transition-property: -webkit-box-shadow;
   transition-property: -webkit-box-shadow;
   transition-property: box-shadow;
@@ -1193,16 +1195,24 @@ button[type="submit"] {
   }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .projects__card:nth-child(-n + 2) {
+    height: 440px;
+  }
+}
+
 .projects h3 {
   font-size: 18px;
   line-height: 2;
   margin-bottom: 4px;
+  letter-spacing: 0.06em;
 }
 
 .projects p {
   font-size: 16px;
   line-height: 30px;
   color: #757575;
+  letter-spacing: 0.03em;
 }
 
 .projects-description {
@@ -1210,6 +1220,12 @@ button[type="submit"] {
   border-left: 1px solid #eeeeee;
   border-right: 1px solid #eeeeee;
   padding: 20px 24px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .projects-description--tablet {
+    padding-bottom: 56px;
+  }
 }
 
 .projects__image-wrapper {
@@ -1305,9 +1321,16 @@ button[type="submit"] {
 
 .navigation__list--mobile {
   font-size: 40px;
-  line-height: 47px;
+  line-height: 1.18;
   margin-bottom: 302px;
   font-weight: 500;
+}
+
+@media screen and (max-width: 414px) {
+  .navigation__list--mobile {
+    font-size: 32px;
+    margin-bottom: 151px;
+  }
 }
 
 .navigation__item--mobile:not(:last-child) {
@@ -1326,14 +1349,28 @@ button[type="submit"] {
 
 .contacts__item--mobile:first-child {
   font-size: 34px;
-  line-height: 40px;
+  line-height: 1.18;
   margin-bottom: 32px;
+}
+
+@media screen and (max-width: 414px) {
+  .contacts__item--mobile:first-child {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
 }
 
 .contacts__item--mobile:last-child {
   font-size: 24px;
-  line-height: 28px;
+  line-height: 1.17;
   margin-bottom: 64px;
+}
+
+@media screen and (max-width: 414px) {
+  .contacts__item--mobile:last-child {
+    font-size: 22px;
+    margin-bottom: 32px;
+  }
 }
 
 .social-links--mobile {

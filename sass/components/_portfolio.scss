@@ -31,15 +31,21 @@
 //   margin-left: 8px;
 // }
 .projects {
-  margin: -15px;
   @media screen and (min-width: 768px) {
+    margin: -15px;
     display: flex;
     flex-wrap: wrap;
   }
 }
+.projects__card:not(:last-child) {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 30px;
+  }
+}
 .projects__card {
   width: 450px;
-  margin: 15px auto;
+  height: 404px;
+  // margin: 15px;
   transition-property: box-shadow;
   transition-duration: $animation-duration;
   transition-timing-function: $time-function;
@@ -51,28 +57,40 @@
 
   @media screen and (min-width: 768px) {
     margin: 15px;
+    // height: 440px;
     width: calc((100% - 2 * 30px) / 2);
   }
   @media screen and (min-width: 1200px) {
     width: calc((100% - 3 * 30px) / 3);
   }
 }
-
+.projects__card:nth-child(-n + 2) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    height: 440px;
+  }
+}
 .projects h3 {
   font-size: 18px;
   line-height: 2;
   margin-bottom: 4px;
+  letter-spacing: 0.06em;
 }
 .projects p {
   font-size: 16px;
   line-height: 30px;
   color: $secondary-color;
+  letter-spacing: 0.03em;
 }
 .projects-description {
   border-bottom: 1px solid #eeeeee;
   border-left: 1px solid #eeeeee;
   border-right: 1px solid #eeeeee;
   padding: 20px 24px;
+}
+.projects-description--tablet {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    padding-bottom: 56px;
+  }
 }
 .projects__image-wrapper {
   position: relative;
